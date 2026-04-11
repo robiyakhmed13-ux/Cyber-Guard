@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 150 60% 90%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 150 40% 85%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 150 40% 85%;
+
+    --primary: 145 80% 42%;
+    --primary-foreground: 220 20% 6%;
+
+    --secondary: 220 15% 16%;
+    --secondary-foreground: 150 30% 80%;
+
+    --muted: 220 15% 14%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 145 70% 35%;
+    --accent-foreground: 220 20% 6%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 145 40% 18%;
+    --input: 220 15% 18%;
+    --ring: 145 80% 42%;
+
+    --radius: 0.25rem;
+
+    --cyber-glow: 0 0 20px hsl(145 80% 42% / 0.3);
+    --cyber-glow-strong: 0 0 40px hsl(145 80% 42% / 0.5);
+
+    --chart-1: 145 80% 42%;
+    --chart-2: 180 70% 45%;
+    --chart-3: 35 90% 55%;
+    --chart-4: 0 70% 50%;
+    --chart-5: 270 60% 55%;
+
+    --sidebar-background: 220 18% 8%;
+    --sidebar-foreground: 150 40% 85%;
+    --sidebar-primary: 145 80% 42%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 15% 14%;
+    --sidebar-accent-foreground: 150 30% 80%;
+    --sidebar-border: 145 40% 18%;
+    --sidebar-ring: 145 80% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-mono;
+  }
+}
+
+@layer utilities {
+  .cyber-glow {
+    box-shadow: var(--cyber-glow);
+  }
+
+  .cyber-glow-strong {
+    box-shadow: var(--cyber-glow-strong);
+  }
+
+  .cyber-text-glow {
+    text-shadow: 0 0 10px hsl(145 80% 42% / 0.5);
+  }
+
+  .cyber-border {
+    border: 1px solid hsl(145 80% 42% / 0.3);
+  }
+
+  .scan-line {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(145 80% 42% / 0.03) 2px,
+      hsl(145 80% 42% / 0.03) 4px
+    );
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+
+  .story-link * {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+}
+
+@layer components {
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: hsl(145 80% 42% / 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+}

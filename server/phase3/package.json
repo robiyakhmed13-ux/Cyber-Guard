@@ -1,0 +1,25 @@
+{
+  "name": "cyberguard-phase3-server",
+  "version": "3.0.0",
+  "description": "CyberGuard Phase III - Data Management & Integration Layer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "sql.js": "^1.10.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.4.0",
+    "express-validator": "^7.2.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "nedb-promises": "^6.2.3",
+    "swagger-ui-express": "^5.0.1",
+    "uuid": "^10.0.0",
+    "winston": "^3.14.0",
+    "xml2js": "^0.6.2"
+  }
+}

@@ -1,0 +1,450 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "CyberGuard Enterprise Integration API",
+    "description": "Service-oriented enterprise integration system for cybersecurity monitoring and threat detection. Implements BPEL-equivalent workflow orchestration, asynchronous messaging, stateful correlation, enterprise caching, and fault tolerance.",
+    "version": "2.0.0",
+    "contact": {
+      "name": "CyberGuard Engineering",
+      "email": "engineering@cyberguard.io"
+    }
+  },
+  "servers": [
+    { "url": "http://localhost:3001", "description": "Development Server" }
+  ],
+  "tags": [
+    { "name": "Orchestration", "description": "Business Process Orchestration (BPEL-equivalent)" },
+    { "name": "Messaging", "description": "Asynchronous Message Queue" },
+    { "name": "Correlation", "description": "Stateful Service Interaction" },
+    { "name": "Caching", "description": "Enterprise Caching Strategy" },
+    { "name": "Services", "description": "Partner Service Invocations" },
+    { "name": "Faults", "description": "Fault Handling and Recovery" }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Health Check",
+        "tags": ["System"],
+        "responses": {
+          "200": {
+            "description": "System health status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string", "example": "healthy" },
+                    "timestamp": { "type": "string", "format": "date-time" },
+                    "services": { "type": "object" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/orchestration/incident-response": {
+      "post": {
+        "summary": "Initiate Incident Response Workflow",
+        "description": "Executes the full BPEL-equivalent incident response orchestration: Receive → Parallel(ThreatAnalysis + NetworkScan) → Switch(severity) → Sequence(Containment → Eradication → Recovery) → Invoke(ComplianceCheck) → Reply",
+        "tags": ["Orchestration"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/IncidentRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Workflow completed successfully",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WorkflowResult" }
+              }
+            }
+          },
+          "400": { "description": "Invalid request" },
+          "500": { "description": "Workflow execution failed" }
+        }
+      }
+    },
+    "/api/orchestration/workflows": {
+      "get": {
+        "summary": "List All Workflows",
+        "tags": ["Orchestration"],
+        "responses": {
+          "200": {
+            "description": "List of workflow instances",
+            "content": { "application/json": { "schema": { "type": "object" } } }
+          }
+        }
+      }
+    },
+    "/api/orchestration/workflow/{workflowId}": {
+      "get": {
+        "summary": "Get Workflow Status",
+        "tags": ["Orchestration"],
+        "parameters": [
+          { "name": "workflowId", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Workflow details" },
+          "404": { "description": "Workflow not found" }
+        }
+      }
+    },
+    "/api/messages/produce": {
+      "post": {
+        "summary": "Produce Message",
+        "description": "Add a message to a named queue for asynchronous processing",
+        "tags": ["Messaging"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ProduceMessage" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Message queued",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string" },
+                    "messageId": { "type": "string" },
+                    "queue": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/messages/consume": {
+      "post": {
+        "summary": "Consume Messages",
+        "description": "Consume pending messages from a queue. Demonstrates processing after consumer was offline.",
+        "tags": ["Messaging"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["queue"],
+                "properties": {
+                  "queue": { "type": "string" },
+                  "batchSize": { "type": "integer", "default": 10 }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Consumed messages" }
+        }
+      }
+    },
+    "/api/messages/simulate-offline": {
+      "post": {
+        "summary": "Simulate Offline Consumer",
+        "description": "Produces messages while consumer is offline to demonstrate persistent message storage",
+        "tags": ["Messaging"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "queue": { "type": "string", "default": "alerts" },
+                  "messagesCount": { "type": "integer", "default": 5 }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Messages produced while consumer was offline" }
+        }
+      }
+    },
+    "/api/messages/stats": {
+      "get": {
+        "summary": "Message Queue Statistics",
+        "tags": ["Messaging"],
+        "responses": { "200": { "description": "Queue statistics" } }
+      }
+    },
+    "/api/correlation/session": {
+      "post": {
+        "summary": "Create Correlated Session",
+        "description": "Creates a new session with unique correlation ID for stateful interaction tracking",
+        "tags": ["Correlation"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateSession" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Session created with correlation ID" }
+        }
+      }
+    },
+    "/api/correlation/session/{correlationId}": {
+      "get": {
+        "summary": "Get Session State",
+        "tags": ["Correlation"],
+        "parameters": [
+          { "name": "correlationId", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Session state with full history" },
+          "404": { "description": "Session not found" }
+        }
+      },
+      "put": {
+        "summary": "Update Session State",
+        "tags": ["Correlation"],
+        "parameters": [
+          { "name": "correlationId", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "state": { "type": "string" },
+                  "data": { "type": "object" }
+                }
+              }
+            }
+          }
+        },
+        "responses": { "200": { "description": "Session updated" } }
+      }
+    },
+    "/api/correlation/simulate-concurrent": {
+      "post": {
+        "summary": "Simulate Concurrent Requests",
+        "description": "Demonstrates correlation handling with 3 simultaneous client sessions",
+        "tags": ["Correlation"],
+        "responses": { "200": { "description": "Concurrent simulation results" } }
+      }
+    },
+    "/api/cache/stats": {
+      "get": {
+        "summary": "Cache Statistics",
+        "description": "Returns hit rate, memory usage, and expiration policies",
+        "tags": ["Caching"],
+        "responses": { "200": { "description": "Cache statistics" } }
+      }
+    },
+    "/api/cache/performance": {
+      "get": {
+        "summary": "Cache Performance Comparison",
+        "description": "Runs 100 iterations comparing cached vs uncached performance",
+        "tags": ["Caching"],
+        "responses": { "200": { "description": "Performance comparison results" } }
+      }
+    },
+    "/api/cache/dashboard-data": {
+      "get": {
+        "summary": "Get Dashboard Data (Output Caching)",
+        "description": "Demonstrates output/fragment caching with 30s absolute expiration",
+        "tags": ["Caching"],
+        "responses": { "200": { "description": "Dashboard data with cache metadata" } }
+      }
+    },
+    "/api/cache/threat-data/{threatId}": {
+      "get": {
+        "summary": "Get Threat Data (Data-level Caching)",
+        "description": "Demonstrates data-level caching with 60s sliding expiration",
+        "tags": ["Caching"],
+        "parameters": [
+          { "name": "threatId", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "Threat data with cache metadata" } }
+      }
+    },
+    "/api/services/threat-analysis": {
+      "post": {
+        "summary": "Invoke Threat Analysis Service",
+        "tags": ["Services"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ThreatAnalysisRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Analysis result" },
+          "503": { "description": "Service unavailable" }
+        }
+      }
+    },
+    "/api/services/network-scan": {
+      "post": {
+        "summary": "Invoke Network Scan Service",
+        "tags": ["Services"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/NetworkScanRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Scan result" },
+          "503": { "description": "Service unavailable" }
+        }
+      }
+    },
+    "/api/services/compliance-check": {
+      "post": {
+        "summary": "Invoke Compliance Check Service",
+        "tags": ["Services"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ComplianceCheckRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Compliance check result" },
+          "503": { "description": "Service unavailable" }
+        }
+      }
+    },
+    "/api/faults/logs": {
+      "get": {
+        "summary": "Get Error Logs",
+        "tags": ["Faults"],
+        "responses": { "200": { "description": "Error log entries" } }
+      }
+    },
+    "/api/faults/circuit-breaker": {
+      "get": {
+        "summary": "Circuit Breaker Status",
+        "tags": ["Faults"],
+        "responses": { "200": { "description": "Circuit breaker state for all services" } }
+      }
+    },
+    "/api/faults/simulate": {
+      "post": {
+        "summary": "Simulate Fault Scenario",
+        "description": "Simulate timeout, service_unavailable, network_error, rate_limit, circuit_breaker, or compensation scenarios",
+        "tags": ["Faults"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "scenario": {
+                    "type": "string",
+                    "enum": ["timeout", "service_unavailable", "network_error", "rate_limit", "circuit_breaker", "compensation", "data_corruption"]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Fault simulation result" },
+          "500": { "description": "Fault handled with recovery action" }
+        }
+      }
+    },
+    "/api/faults/reset": {
+      "post": {
+        "summary": "Reset Circuit Breakers",
+        "tags": ["Faults"],
+        "responses": { "200": { "description": "Circuit breakers reset" } }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IncidentRequest": {
+        "type": "object",
+        "required": ["threatType", "sourceIP", "targetAsset"],
+        "properties": {
+          "threatType": { "type": "string", "example": "ransomware", "enum": ["ransomware", "ddos", "phishing", "malware", "brute_force", "sql_injection", "xss", "zero_day"] },
+          "sourceIP": { "type": "string", "example": "192.168.1.100" },
+          "targetAsset": { "type": "string", "example": "web-server-01" },
+          "severity": { "type": "string", "enum": ["low", "medium", "high", "critical"], "default": "medium" }
+        }
+      },
+      "WorkflowResult": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string" },
+          "correlationId": { "type": "string" },
+          "workflowId": { "type": "string" },
+          "result": { "type": "object" },
+          "executionTime": { "type": "string" }
+        }
+      },
+      "ProduceMessage": {
+        "type": "object",
+        "required": ["queue", "message"],
+        "properties": {
+          "queue": { "type": "string", "example": "alerts" },
+          "message": { "type": "object", "example": { "type": "threat_alert", "severity": "high" } },
+          "priority": { "type": "string", "enum": ["low", "normal", "high", "critical"], "default": "normal" }
+        }
+      },
+      "CreateSession": {
+        "type": "object",
+        "required": ["clientId"],
+        "properties": {
+          "clientId": { "type": "string", "example": "client-001" },
+          "businessContext": { "type": "object", "example": { "department": "SOC", "priority": "high" } }
+        }
+      },
+      "ThreatAnalysisRequest": {
+        "type": "object",
+        "required": ["threatType", "sourceIP"],
+        "properties": {
+          "threatType": { "type": "string" },
+          "sourceIP": { "type": "string" },
+          "targetAsset": { "type": "string" }
+        }
+      },
+      "NetworkScanRequest": {
+        "type": "object",
+        "required": ["targetIP"],
+        "properties": {
+          "targetIP": { "type": "string" },
+          "scanType": { "type": "string", "enum": ["quick", "standard", "deep"], "default": "standard" },
+          "targetAsset": { "type": "string" }
+        }
+      },
+      "ComplianceCheckRequest": {
+        "type": "object",
+        "properties": {
+          "incidentType": { "type": "string" },
+          "severity": { "type": "string" },
+          "responseActions": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}
