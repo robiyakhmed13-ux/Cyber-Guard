@@ -60,7 +60,7 @@ class AuthService {
 
     AuditLogModel.create({
       user_id: user.id,
-      action: 'login_success',
+      action: 'login success',
       resource: 'auth',
       ip_address: metadata.ip
     });

@@ -101,7 +101,7 @@ const Dashboard = () => {
         {/* Traffic Chart */}
         <ScrollReveal delay={100}>
           <div className="bg-card border border-border rounded p-6">
-            <h2 className="font-mono text-sm text-primary mb-4">{`> Network_Traffic (Live)`}</h2>
+            <h2 className="font-mono text-sm text-primary mb-4">{`Network Traffic (Live)`}</h2>
             <ResponsiveContainer width="100%" height={300}>
               <AreaChart data={traffic}>
                 <CartesianGrid strokeDasharray="3 3" stroke={chartTheme.grid} />
@@ -128,7 +128,7 @@ const Dashboard = () => {
           {/* Threat Distribution Pie */}
           <ScrollReveal delay={200}>
             <div className="bg-card border border-border rounded p-6">
-              <h2 className="font-mono text-sm text-primary mb-4">{`> Threat_Distribution`}</h2>
+              <h2 className="font-mono text-sm text-primary mb-4">{`Threat Distribution`}</h2>
               <ResponsiveContainer width="100%" height={280}>
                 <PieChart>
                   <Pie
@@ -164,7 +164,7 @@ const Dashboard = () => {
           {/* Weekly Bar Chart */}
           <ScrollReveal delay={300}>
             <div className="bg-card border border-border rounded p-6">
-              <h2 className="font-mono text-sm text-primary mb-4">{`> Weekly_Overview`}</h2>
+              <h2 className="font-mono text-sm text-primary mb-4">{`Weekly Overview`}</h2>
               <ResponsiveContainer width="100%" height={280}>
                 <BarChart data={weeklyData}>
                   <CartesianGrid strokeDasharray="3 3" stroke={chartTheme.grid} />
@@ -189,7 +189,7 @@ const Dashboard = () => {
           {/* Security Score Radar */}
           <ScrollReveal delay={200}>
             <div className="bg-card border border-border rounded p-6">
-              <h2 className="font-mono text-sm text-primary mb-4">{`> Security_Posture`}</h2>
+              <h2 className="font-mono text-sm text-primary mb-4">{`Security Posture`}</h2>
               <ResponsiveContainer width="100%" height={280}>
                 <RadarChart data={securityScore}>
                   <PolarGrid stroke={chartTheme.grid} />
@@ -203,7 +203,7 @@ const Dashboard = () => {
           {/* Recent Alerts */}
           <ScrollReveal delay={300}>
             <div className="bg-card border border-border rounded p-6">
-              <h2 className="font-mono text-sm text-primary mb-4">{`> Recent_Alerts`}</h2>
+              <h2 className="font-mono text-sm text-primary mb-4">{`Recent Alerts`}</h2>
               <div className="space-y-3">
                 {recentAlerts.map((alert, i) => (
                   <div

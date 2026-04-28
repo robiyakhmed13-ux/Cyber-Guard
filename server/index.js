@@ -115,7 +115,7 @@ app.post('/api/orchestration/incident-response', async (req, res) => {
   const { threatType, sourceIP, targetAsset, severity } = req.body;
 
   if (!threatType || !sourceIP || !targetAsset) {
-    return res.status(400).json({ error: 'Missing required fields: threatType, sourceIP, targetAsset' });
+    return res.status(400).json({ error: 'Missing required fields: threat Type, source IP, target Asset' });
   }
 
   try {

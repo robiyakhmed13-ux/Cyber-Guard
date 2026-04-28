@@ -46,7 +46,7 @@ const About = () => (
       </div>
 
       <section>
-        <h2 className="font-mono text-lg text-primary mb-4">{`> Timeline`}</h2>
+        <h2 className="font-mono text-lg text-primary mb-4">{`Timeline`}</h2>
         <div className="space-y-4 border-l-2 border-border pl-6">
           {[
             { year: "2020", event: "CyberGuard founded with a focus on SMB security" },

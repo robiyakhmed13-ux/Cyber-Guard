@@ -172,7 +172,7 @@ const IntegrationDashboard = () => {
         {health && (
           <ScrollReveal>
             <div className="bg-card border border-border rounded p-6">
-              <h2 className="font-mono text-sm text-primary mb-4">{"> System_Health"}</h2>
+              <h2 className="font-mono text-sm text-primary mb-4">{"System Health"}</h2>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
                 {Object.entries(health.services || {}).map(([name, status]) => (
                   <div key={name} className="border border-border rounded p-3 text-center">

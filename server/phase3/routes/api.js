@@ -15,7 +15,8 @@ const {
   AuthController,
   IncidentController,
   ThreatIntelController,
-  SystemController
+  SystemController,
+  IntelligenceController
 } = require('../controllers');
 const {
   authenticateToken,
@@ -200,5 +201,16 @@ router.get('/health', SystemController.getHealth);
 router.get('/metrics', optionalAuth, SystemController.getMetrics);
 router.get('/audit-log', authenticateToken, authorize('admin'), SystemController.getAuditLog);
 router.get('/system-events', optionalAuth, SystemController.getSystemEvents);
+
+// ============================================================
+// Phase V Intelligence Routes
+// ============================================================
+router.get('/ai/health', optionalAuth, IntelligenceController.getHealth);
+router.get('/ai/model-info', optionalAuth, IntelligenceController.getModelInfo);
+router.post('/ai/predict-risk', optionalAuth, IntelligenceController.predictRisk);
+router.get('/ai/ontology/triples', optionalAuth, IntelligenceController.getOntologyTriples);
+router.get('/ai/ontology/query', optionalAuth, IntelligenceController.queryOntology);
+router.get('/ai/incidents/:id/enrich', optionalAuth, IntelligenceController.enrichIncident);
+router.post('/ai/llm/recommendation', optionalAuth, IntelligenceController.llmRecommendation);
 
 module.exports = router;

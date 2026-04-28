@@ -1,22 +1,68 @@
 {"event_type":"scan_complete","severity":"error","source":"system","details":{"message":"System event #2"},"timestamp":"2026-04-05T02:28:33.983Z","_id":"0EXf24QSXkW5WYrT"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1775993919273-ugiz8p","type":"threat_analysis","priority":"high"},"timestamp":"2026-04-12T11:38:39.276Z","_id":"0GZwuGhETpPbhvrx"}
 {"event_type":"config_change","severity":"info","source":"system","details":{"message":"System event #11"},"timestamp":"2026-04-04T20:31:00.525Z","_id":"0HdoyJMjbGg8Df5J"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1775925324378-cn9se0","type":"threat_analysis"},"timestamp":"2026-04-11T16:35:28.327Z","_id":"2l5F9H6UdGhZMZ4E"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1776017943493-p0a2w6","type":"threat_analysis","priority":"normal"},"timestamp":"2026-04-12T18:19:03.509Z","_id":"5ZMZU1cQWOzrgbax"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1775925314001-5rqv8x","type":"threat_analysis"},"timestamp":"2026-04-11T16:35:18.413Z","_id":"6p0b0oYsrj4ICy35"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1775925318303-gkkz9l","type":"report_generation"},"timestamp":"2026-04-11T16:35:23.729Z","_id":"9XQrwaPUkKRiZEM8"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1775932292120-4nw4m2","type":"threat_analysis","priority":"normal"},"timestamp":"2026-04-11T18:31:32.182Z","_id":"9YCRjd7x82FmV2p9"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1775993802734-mfnctu","type":"threat_analysis","priority":"normal"},"timestamp":"2026-04-12T11:36:42.760Z","_id":"B0LsAEzcKih16fcb"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1775932454765-wrfj27","type":"threat_analysis","priority":"normal"},"timestamp":"2026-04-11T18:34:14.773Z","_id":"BclfviMa1F2lw3TN"}
 {"event_type":"config_change","severity":"info","source":"system","details":{"message":"System event #13"},"timestamp":"2026-04-04T18:46:36.373Z","_id":"CP07NjEtiBmCiz76"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1776269869051-onvcst","type":"threat_analysis","priority":"normal"},"timestamp":"2026-04-15T16:17:49.091Z","_id":"FPJZqbr39gj7OSmJ"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1775932454765-wrfj27","type":"threat_analysis"},"timestamp":"2026-04-11T18:34:15.318Z","_id":"Fi1LaYl72QGrmNe0"}
 {"event_type":"scan_complete","severity":"warning","source":"system","details":{"message":"System event #6"},"timestamp":"2026-04-08T15:50:21.668Z","_id":"HEEbOv9QDrmSGvWh"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1775932292120-4nw4m2","type":"threat_analysis"},"timestamp":"2026-04-11T18:31:34.937Z","_id":"HWfgtGd2EMYtnnKN"}
 {"event_type":"alert_triggered","severity":"warning","source":"system","details":{"message":"System event #14"},"timestamp":"2026-04-10T08:21:09.608Z","_id":"IidW3euim2OF9Rz5"}
 {"event_type":"alert_triggered","severity":"error","source":"system","details":{"message":"System event #3"},"timestamp":"2026-04-09T09:30:55.681Z","_id":"JG4X9OskuwgCLbNT"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1775993931277-43zvlt","type":"scan_processing","priority":"high"},"timestamp":"2026-04-12T11:38:51.280Z","_id":"K3KFYylxhhNxy3VW"}
 {"event_type":"scan_complete","severity":"error","source":"system","details":{"message":"System event #7"},"timestamp":"2026-04-11T10:54:16.221Z","_id":"KyeIx57q1CLSFQ5i"}
 {"event_type":"scan_complete","severity":"info","source":"system","details":{"message":"System event #17"},"timestamp":"2026-04-09T23:46:21.775Z","_id":"L0xmUUiKmHItX2l4"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1775993931277-43zvlt","type":"scan_processing"},"timestamp":"2026-04-12T11:38:54.655Z","_id":"L2khWJVzp4qsCync"}
 {"event_type":"scan_complete","severity":"info","source":"system","details":{"message":"System event #9"},"timestamp":"2026-04-05T05:24:49.275Z","_id":"Mksc7DET6ReUvtPa"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1776017943493-p0a2w6","type":"threat_analysis"},"timestamp":"2026-04-12T18:19:05.369Z","_id":"NHEXYNuCWYcGMeRV"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1775925318303-gkkz9l","type":"report_generation","priority":"high"},"timestamp":"2026-04-11T16:35:18.305Z","_id":"Nt8ydptt69KtRmuB"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1775925324378-cn9se0","type":"threat_analysis","priority":"normal"},"timestamp":"2026-04-11T16:35:24.393Z","_id":"OagMsxMQ9MhTRvzt"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1775993802734-mfnctu","type":"threat_analysis"},"timestamp":"2026-04-12T11:36:43.972Z","_id":"SPRYzBpUGzejFgZp"}
 {"event_type":"backup_complete","severity":"warning","source":"system","details":{"message":"System event #16"},"timestamp":"2026-04-10T08:06:35.255Z","_id":"ScmaRXmJFyJm5dHQ"}
 {"event_type":"config_change","severity":"warning","source":"system","details":{"message":"System event #15"},"timestamp":"2026-04-09T08:44:15.287Z","_id":"TIgEzD7Jjat3U5UD"}
 {"event_type":"login","severity":"warning","source":"system","details":{"message":"System event #4"},"timestamp":"2026-04-06T20:51:59.199Z","_id":"UaZWhJMANP4qIMVb"}
 {"event_type":"alert_triggered","severity":"warning","source":"system","details":{"message":"System event #10"},"timestamp":"2026-04-09T23:53:34.866Z","_id":"UwWAiS2TlSe5aEOP"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1776269747595-8zie2e","type":"threat_analysis","priority":"normal"},"timestamp":"2026-04-15T16:15:47.652Z","_id":"VlPo7Bve5OxoOrdH"}
 {"event_type":"login","severity":"info","source":"system","details":{"message":"System event #5"},"timestamp":"2026-04-08T03:58:39.045Z","_id":"aJIx0qzE49EVIvg9"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1775925314001-5rqv8x","type":"threat_analysis","priority":"normal"},"timestamp":"2026-04-11T16:35:14.043Z","_id":"alpDOA1uALd7gqNF"}
 {"event_type":"login","severity":"info","source":"system","details":{"message":"System event #19"},"timestamp":"2026-04-10T04:18:03.879Z","_id":"btwkagOtNHp4xEGi"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1775993919273-ugiz8p","type":"threat_analysis"},"timestamp":"2026-04-12T11:38:44.086Z","_id":"bwvoqEbhlQPYG9GF"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1775925336375-vqs5s0","type":"threat_analysis"},"timestamp":"2026-04-11T16:35:38.214Z","_id":"cwUYoQrefD5Xrl2K"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1776269747595-8zie2e","type":"threat_analysis"},"timestamp":"2026-04-15T16:15:48.955Z","_id":"fmAPLIGlgYldQBKI"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1775993925018-7szju2","type":"threat_analysis"},"timestamp":"2026-04-12T11:38:49.303Z","_id":"heOgLyKLoC4RneXl"}
 {"event_type":"backup_complete","severity":"info","source":"system","details":{"message":"System event #1"},"timestamp":"2026-04-07T12:11:36.190Z","_id":"inv5zOHspDCf0AEG"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1776269869051-onvcst","type":"threat_analysis"},"timestamp":"2026-04-15T16:17:54.159Z","_id":"j3Na1OyKpMCMR1ta"}
 {"event_type":"backup_complete","severity":"error","source":"system","details":{"message":"System event #8"},"timestamp":"2026-04-05T03:48:47.564Z","_id":"jhkDmNNnGh2qsSpP"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1775925337208-fmjf6d","type":"report_generation","priority":"high"},"timestamp":"2026-04-11T16:35:37.210Z","_id":"k7BvYHB2saorY9GM"}
 {"event_type":"scan_complete","severity":"info","source":"system","details":{"message":"System event #18"},"timestamp":"2026-04-09T00:23:07.409Z","_id":"kcPckHlmr8NluWsJ"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1775925337208-fmjf6d","type":"report_generation"},"timestamp":"2026-04-11T16:35:38.761Z","_id":"lT5dg4tqR60Chmau"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1775925315689-xtqn9p","type":"threat_analysis"},"timestamp":"2026-04-11T16:35:18.833Z","_id":"nvkxrZKCepfcsBx7"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1775925315689-xtqn9p","type":"threat_analysis","priority":"normal"},"timestamp":"2026-04-11T16:35:15.725Z","_id":"ocsJUXWPUwEnFvor"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1775925336375-vqs5s0","type":"threat_analysis","priority":"normal"},"timestamp":"2026-04-11T16:35:36.384Z","_id":"qbuh1ooc7fv2v4Sa"}
 {"event_type":"scan_complete","severity":"error","source":"system","details":{"message":"System event #20"},"timestamp":"2026-04-10T02:25:42.106Z","_id":"rXnWdFRqTfKYQXUT"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1775932319276-lfn2hq","type":"report_generation","priority":"high"},"timestamp":"2026-04-11T18:31:59.290Z","_id":"sj5HG6pt9dXiSAOb"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1775932319276-lfn2hq","type":"report_generation"},"timestamp":"2026-04-11T18:32:00.367Z","_id":"ulaZJJlH76v37qbb"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1775993925018-7szju2","type":"threat_analysis","priority":"high"},"timestamp":"2026-04-12T11:38:45.023Z","_id":"wulZSOTYxMs2R0fg"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1775925317098-m57by6","type":"report_generation","priority":"high"},"timestamp":"2026-04-11T16:35:17.099Z","_id":"xG9xCVczvoWCKjbL"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1775925317098-m57by6","type":"report_generation"},"timestamp":"2026-04-11T16:35:19.596Z","_id":"xJbd4rX5IDQad20K"}
 {"event_type":"login","severity":"warning","source":"system","details":{"message":"System event #12"},"timestamp":"2026-04-11T12:43:18.258Z","_id":"yRq6bkEPwMosMkSb"}
 {"$$indexCreated":{"fieldName":"event_type","unique":false,"sparse":false}}
 {"$$indexCreated":{"fieldName":"timestamp","unique":false,"sparse":false}}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1777375782682-xc8iji","type":"threat_analysis","priority":"normal"},"timestamp":"2026-04-28T11:29:42.703Z","_id":"9lBgKU8zuQFNTDv7"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1777375782682-xc8iji","type":"threat_analysis"},"timestamp":"2026-04-28T11:29:47.372Z","_id":"uFXBinHzKoVMRTHH"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1777375904092-6pf8yg","type":"threat_analysis","priority":"normal"},"timestamp":"2026-04-28T11:31:44.102Z","_id":"BRXUAXaJlBgatdTR"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1777375904092-6pf8yg","type":"threat_analysis"},"timestamp":"2026-04-28T11:31:47.541Z","_id":"hF37TF4YwVURiCJG"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1777375963533-xy1r56","type":"scan_processing","priority":"high"},"timestamp":"2026-04-28T11:32:43.534Z","_id":"GsbRNW2SFXJ6zrCj"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1777375963533-xy1r56","type":"scan_processing"},"timestamp":"2026-04-28T11:32:48.387Z","_id":"JNlHqfbAT032pjAy"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1777375979350-lian7q","type":"scan_processing","priority":"high"},"timestamp":"2026-04-28T11:32:59.352Z","_id":"3SQD8zQZhZpLuYW3"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1777375979350-lian7q","type":"scan_processing"},"timestamp":"2026-04-28T11:33:03.146Z","_id":"6t7PnoxVGIjvsvw2"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1777376109504-nglj5b","type":"threat_analysis","priority":"high"},"timestamp":"2026-04-28T11:35:09.506Z","_id":"wxyVIrwsJ42wKUKk"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1777376109504-nglj5b","type":"threat_analysis"},"timestamp":"2026-04-28T11:35:12.865Z","_id":"ovvWsXsqcAsiFziq"}
+{"event_type":"job_produced","severity":"info","details":{"job_id":"JOB-1777376151961-nd5hkg","type":"report_generation","priority":"high"},"timestamp":"2026-04-28T11:35:51.962Z","_id":"xpMi2X6mV1vsPxke"}
+{"event_type":"job_completed","severity":"info","details":{"job_id":"JOB-1777376151961-nd5hkg","type":"report_generation"},"timestamp":"2026-04-28T11:35:53.637Z","_id":"OEsnaw96BT2sGnrE"}

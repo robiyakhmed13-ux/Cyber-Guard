@@ -190,6 +190,8 @@ const apiLimiter = rateLimit({
   max: 200,
   standardHeaders: true,
   legacyHeaders: false,
+  // Keep authentication endpoints reachable even when other API traffic is high.
+  skip: (req) => req.path === '/auth/login' || req.path === '/auth/register',
   message: { error: 'Too many requests. Please try again later.' }
 });
 

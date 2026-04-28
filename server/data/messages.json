@@ -1,0 +1,1267 @@
+{
+  "messages": [
+    [
+      "MSG-1775924879342-c31bd95e",
+      {
+        "id": "MSG-1775924879342-c31bd95e",
+        "queue": "incidents",
+        "body": {
+          "type": "incident_received",
+          "correlationId": "INC-1775924879337-17c03839",
+          "data": {
+            "workflowId": "17c03839-6eb2-4581-9726-ff15ba7b263b",
+            "correlationId": "INC-1775924879337-17c03839",
+            "threatType": "phishing",
+            "sourceIP": "192.168.95.234",
+            "targetAsset": "server-04",
+            "severity": "low",
+            "reportedAt": "2026-04-11T16:27:59.341Z"
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T16:27:59.342Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775924879337-17c03839",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775924879706-9e66e367",
+      {
+        "id": "MSG-1775924879706-9e66e367",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_containment",
+          "correlationId": "INC-1775924879337-17c03839",
+          "result": {
+            "action": "containment",
+            "correlationId": "INC-1775924879337-17c03839",
+            "status": "completed",
+            "startedAt": "2026-04-11T16:27:59.606Z",
+            "completedAt": "2026-04-11T16:27:59.706Z",
+            "details": {
+              "ipBlocked": "192.168.95.234",
+              "firewallRulesUpdated": true,
+              "endpointsIsolated": 3,
+              "actionsExecuted": [
+                "enhanced_monitoring",
+                "rule_update"
+              ]
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T16:27:59.706Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775924879337-17c03839",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775924879777-77a2159f",
+      {
+        "id": "MSG-1775924879777-77a2159f",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_eradication",
+          "correlationId": "INC-1775924879337-17c03839",
+          "result": {
+            "action": "eradication",
+            "correlationId": "INC-1775924879337-17c03839",
+            "status": "completed",
+            "startedAt": "2026-04-11T16:27:59.677Z",
+            "completedAt": "2026-04-11T16:27:59.777Z",
+            "details": {
+              "malwareRemoved": true,
+              "signaturesUpdated": true,
+              "backdoorsCleared": 1,
+              "patchesApplied": 2
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T16:27:59.777Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775924879337-17c03839",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775924879857-238f0c11",
+      {
+        "id": "MSG-1775924879857-238f0c11",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_recovery",
+          "correlationId": "INC-1775924879337-17c03839",
+          "result": {
+            "action": "recovery",
+            "correlationId": "INC-1775924879337-17c03839",
+            "status": "completed",
+            "startedAt": "2026-04-11T16:27:59.757Z",
+            "completedAt": "2026-04-11T16:27:59.857Z",
+            "details": {
+              "systemsRestored": true,
+              "servicesRestarted": 3,
+              "dataIntegrityVerified": true,
+              "backupValidated": true,
+              "targetAsset": "server-04"
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T16:27:59.857Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775924879337-17c03839",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775924880075-5d47be4b",
+      {
+        "id": "MSG-1775924880075-5d47be4b",
+        "queue": "incidents",
+        "body": {
+          "type": "incident_resolved",
+          "correlationId": "INC-1775924879337-17c03839",
+          "workflowId": "17c03839-6eb2-4581-9726-ff15ba7b263b",
+          "severity": "medium"
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T16:28:00.075Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775924879337-17c03839",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775931923005-907034c0",
+      {
+        "id": "MSG-1775931923005-907034c0",
+        "queue": "incidents",
+        "body": {
+          "type": "incident_received",
+          "correlationId": "INC-1775931923004-9cb7dd00",
+          "data": {
+            "workflowId": "9cb7dd00-6375-4101-aadb-42de22cbdd86",
+            "correlationId": "INC-1775931923004-9cb7dd00",
+            "threatType": "phishing",
+            "sourceIP": "192.168.22.174",
+            "targetAsset": "server-08",
+            "severity": "medium",
+            "reportedAt": "2026-04-11T18:25:23.004Z"
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T18:25:23.005Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775931923004-9cb7dd00",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775931923424-6b044985",
+      {
+        "id": "MSG-1775931923424-6b044985",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_containment",
+          "correlationId": "INC-1775931923004-9cb7dd00",
+          "result": {
+            "action": "containment",
+            "correlationId": "INC-1775931923004-9cb7dd00",
+            "status": "completed",
+            "startedAt": "2026-04-11T18:25:23.324Z",
+            "completedAt": "2026-04-11T18:25:23.424Z",
+            "details": {
+              "ipBlocked": "192.168.22.174",
+              "firewallRulesUpdated": true,
+              "endpointsIsolated": 3,
+              "actionsExecuted": [
+                "enhanced_monitoring",
+                "rule_update"
+              ]
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T18:25:23.424Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775931923004-9cb7dd00",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775931923499-504bd2a0",
+      {
+        "id": "MSG-1775931923499-504bd2a0",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_eradication",
+          "correlationId": "INC-1775931923004-9cb7dd00",
+          "result": {
+            "action": "eradication",
+            "correlationId": "INC-1775931923004-9cb7dd00",
+            "status": "completed",
+            "startedAt": "2026-04-11T18:25:23.399Z",
+            "completedAt": "2026-04-11T18:25:23.499Z",
+            "details": {
+              "malwareRemoved": true,
+              "signaturesUpdated": true,
+              "backdoorsCleared": 0,
+              "patchesApplied": 1
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T18:25:23.499Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775931923004-9cb7dd00",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775931923598-871aa057",
+      {
+        "id": "MSG-1775931923598-871aa057",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_recovery",
+          "correlationId": "INC-1775931923004-9cb7dd00",
+          "result": {
+            "action": "recovery",
+            "correlationId": "INC-1775931923004-9cb7dd00",
+            "status": "completed",
+            "startedAt": "2026-04-11T18:25:23.497Z",
+            "completedAt": "2026-04-11T18:25:23.597Z",
+            "details": {
+              "systemsRestored": true,
+              "servicesRestarted": 3,
+              "dataIntegrityVerified": true,
+              "backupValidated": true,
+              "targetAsset": "server-08"
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T18:25:23.598Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775931923004-9cb7dd00",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775931923883-238a8e75",
+      {
+        "id": "MSG-1775931923883-238a8e75",
+        "queue": "incidents",
+        "body": {
+          "type": "incident_resolved",
+          "correlationId": "INC-1775931923004-9cb7dd00",
+          "workflowId": "9cb7dd00-6375-4101-aadb-42de22cbdd86",
+          "severity": "medium"
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T18:25:23.883Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775931923004-9cb7dd00",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775932082474-17d4cec6",
+      {
+        "id": "MSG-1775932082474-17d4cec6",
+        "queue": "alerts",
+        "body": {
+          "type": "threat_alert",
+          "severity": "medium",
+          "message": "Alert #1 generated while consumer was offline",
+          "timestamp": "2026-04-11T18:28:02.474Z"
+        },
+        "priority": "normal",
+        "status": "consumed",
+        "producedAt": "2026-04-11T18:28:02.474Z",
+        "consumedAt": "2026-04-28T11:28:08.687Z",
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": null,
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775932082476-a8eec885",
+      {
+        "id": "MSG-1775932082476-a8eec885",
+        "queue": "alerts",
+        "body": {
+          "type": "threat_alert",
+          "severity": "medium",
+          "message": "Alert #2 generated while consumer was offline",
+          "timestamp": "2026-04-11T18:28:02.476Z"
+        },
+        "priority": "normal",
+        "status": "consumed",
+        "producedAt": "2026-04-11T18:28:02.476Z",
+        "consumedAt": "2026-04-28T11:28:08.687Z",
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": null,
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775932082477-f4bf6116",
+      {
+        "id": "MSG-1775932082477-f4bf6116",
+        "queue": "alerts",
+        "body": {
+          "type": "threat_alert",
+          "severity": "high",
+          "message": "Alert #3 generated while consumer was offline",
+          "timestamp": "2026-04-11T18:28:02.477Z"
+        },
+        "priority": "normal",
+        "status": "consumed",
+        "producedAt": "2026-04-11T18:28:02.477Z",
+        "consumedAt": "2026-04-28T11:28:08.687Z",
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": null,
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775932082478-3de6c583",
+      {
+        "id": "MSG-1775932082478-3de6c583",
+        "queue": "alerts",
+        "body": {
+          "type": "threat_alert",
+          "severity": "high",
+          "message": "Alert #4 generated while consumer was offline",
+          "timestamp": "2026-04-11T18:28:02.478Z"
+        },
+        "priority": "normal",
+        "status": "consumed",
+        "producedAt": "2026-04-11T18:28:02.478Z",
+        "consumedAt": "2026-04-28T11:28:08.687Z",
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": null,
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775932082479-1445cca3",
+      {
+        "id": "MSG-1775932082479-1445cca3",
+        "queue": "alerts",
+        "body": {
+          "type": "threat_alert",
+          "severity": "high",
+          "message": "Alert #5 generated while consumer was offline",
+          "timestamp": "2026-04-11T18:28:02.479Z"
+        },
+        "priority": "normal",
+        "status": "consumed",
+        "producedAt": "2026-04-11T18:28:02.479Z",
+        "consumedAt": "2026-04-28T11:28:08.687Z",
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": null,
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775932088440-64b038d0",
+      {
+        "id": "MSG-1775932088440-64b038d0",
+        "queue": "incidents",
+        "body": {
+          "type": "incident_received",
+          "correlationId": "INC-1775932088440-7df03093",
+          "data": {
+            "workflowId": "7df03093-34e4-4909-8271-a01e1077a0f9",
+            "correlationId": "INC-1775932088440-7df03093",
+            "threatType": "ddos",
+            "sourceIP": "192.168.9.184",
+            "targetAsset": "server-10",
+            "severity": "critical",
+            "reportedAt": "2026-04-11T18:28:08.440Z"
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T18:28:08.440Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775932088440-7df03093",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775932088698-9f73fae9",
+      {
+        "id": "MSG-1775932088698-9f73fae9",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_containment",
+          "correlationId": "INC-1775932088440-7df03093",
+          "result": {
+            "action": "containment",
+            "correlationId": "INC-1775932088440-7df03093",
+            "status": "completed",
+            "startedAt": "2026-04-11T18:28:08.597Z",
+            "completedAt": "2026-04-11T18:28:08.697Z",
+            "details": {
+              "ipBlocked": "192.168.9.184",
+              "firewallRulesUpdated": true,
+              "endpointsIsolated": 1,
+              "actionsExecuted": [
+                "containment",
+                "traffic_filtering",
+                "evidence_collection"
+              ]
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T18:28:08.698Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775932088440-7df03093",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775932088849-47877729",
+      {
+        "id": "MSG-1775932088849-47877729",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_eradication",
+          "correlationId": "INC-1775932088440-7df03093",
+          "result": {
+            "action": "eradication",
+            "correlationId": "INC-1775932088440-7df03093",
+            "status": "completed",
+            "startedAt": "2026-04-11T18:28:08.749Z",
+            "completedAt": "2026-04-11T18:28:08.849Z",
+            "details": {
+              "malwareRemoved": true,
+              "signaturesUpdated": true,
+              "backdoorsCleared": 0,
+              "patchesApplied": 4
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T18:28:08.849Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775932088440-7df03093",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775932089009-bde86410",
+      {
+        "id": "MSG-1775932089009-bde86410",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_recovery",
+          "correlationId": "INC-1775932088440-7df03093",
+          "result": {
+            "action": "recovery",
+            "correlationId": "INC-1775932088440-7df03093",
+            "status": "completed",
+            "startedAt": "2026-04-11T18:28:08.909Z",
+            "completedAt": "2026-04-11T18:28:09.009Z",
+            "details": {
+              "systemsRestored": true,
+              "servicesRestarted": 1,
+              "dataIntegrityVerified": true,
+              "backupValidated": true,
+              "targetAsset": "server-10"
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T18:28:09.009Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775932088440-7df03093",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775932089233-ad92743e",
+      {
+        "id": "MSG-1775932089233-ad92743e",
+        "queue": "incidents",
+        "body": {
+          "type": "incident_resolved",
+          "correlationId": "INC-1775932088440-7df03093",
+          "workflowId": "7df03093-34e4-4909-8271-a01e1077a0f9",
+          "severity": "high"
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T18:28:09.233Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775932088440-7df03093",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775932389903-ea4629eb",
+      {
+        "id": "MSG-1775932389903-ea4629eb",
+        "queue": "incidents",
+        "body": {
+          "type": "incident_received",
+          "correlationId": "INC-1775932389895-ae37c0cd",
+          "data": {
+            "workflowId": "ae37c0cd-bf9f-402e-8639-0e28368ebfb7",
+            "correlationId": "INC-1775932389895-ae37c0cd",
+            "threatType": "malware",
+            "sourceIP": "192.168.43.60",
+            "targetAsset": "server-06",
+            "severity": "medium",
+            "reportedAt": "2026-04-11T18:33:09.895Z"
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T18:33:09.903Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775932389895-ae37c0cd",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775932390276-655ab029",
+      {
+        "id": "MSG-1775932390276-655ab029",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_containment",
+          "correlationId": "INC-1775932389895-ae37c0cd",
+          "result": {
+            "action": "containment",
+            "correlationId": "INC-1775932389895-ae37c0cd",
+            "status": "completed",
+            "startedAt": "2026-04-11T18:33:10.176Z",
+            "completedAt": "2026-04-11T18:33:10.276Z",
+            "details": {
+              "ipBlocked": "192.168.43.60",
+              "firewallRulesUpdated": true,
+              "endpointsIsolated": 2,
+              "actionsExecuted": [
+                "logging",
+                "baseline_update"
+              ]
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T18:33:10.276Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775932389895-ae37c0cd",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775932390475-1baf7631",
+      {
+        "id": "MSG-1775932390475-1baf7631",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_eradication",
+          "correlationId": "INC-1775932389895-ae37c0cd",
+          "result": {
+            "action": "eradication",
+            "correlationId": "INC-1775932389895-ae37c0cd",
+            "status": "completed",
+            "startedAt": "2026-04-11T18:33:10.375Z",
+            "completedAt": "2026-04-11T18:33:10.475Z",
+            "details": {
+              "malwareRemoved": true,
+              "signaturesUpdated": true,
+              "backdoorsCleared": 1,
+              "patchesApplied": 4
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T18:33:10.475Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775932389895-ae37c0cd",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775932390598-67d068b4",
+      {
+        "id": "MSG-1775932390598-67d068b4",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_recovery",
+          "correlationId": "INC-1775932389895-ae37c0cd",
+          "result": {
+            "action": "recovery",
+            "correlationId": "INC-1775932389895-ae37c0cd",
+            "status": "completed",
+            "startedAt": "2026-04-11T18:33:10.498Z",
+            "completedAt": "2026-04-11T18:33:10.598Z",
+            "details": {
+              "systemsRestored": true,
+              "servicesRestarted": 3,
+              "dataIntegrityVerified": true,
+              "backupValidated": true,
+              "targetAsset": "server-06"
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T18:33:10.598Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775932389895-ae37c0cd",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1775932390842-0a90d25c",
+      {
+        "id": "MSG-1775932390842-0a90d25c",
+        "queue": "incidents",
+        "body": {
+          "type": "incident_resolved",
+          "correlationId": "INC-1775932389895-ae37c0cd",
+          "workflowId": "ae37c0cd-bf9f-402e-8639-0e28368ebfb7",
+          "severity": "low"
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-11T18:33:10.842Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1775932389895-ae37c0cd",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1776269645775-695b5e0a",
+      {
+        "id": "MSG-1776269645775-695b5e0a",
+        "queue": "incidents",
+        "body": {
+          "type": "incident_received",
+          "correlationId": "INC-1776269645774-a81c41a5",
+          "data": {
+            "workflowId": "a81c41a5-0912-45cc-b5cd-0a484c42f62f",
+            "correlationId": "INC-1776269645774-a81c41a5",
+            "threatType": "ddos",
+            "sourceIP": "192.168.147.70",
+            "targetAsset": "server-14",
+            "severity": "low",
+            "reportedAt": "2026-04-15T16:14:05.774Z"
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-15T16:14:05.775Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1776269645774-a81c41a5",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1776269646192-d29e0f38",
+      {
+        "id": "MSG-1776269646192-d29e0f38",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_containment",
+          "correlationId": "INC-1776269645774-a81c41a5",
+          "result": {
+            "action": "containment",
+            "correlationId": "INC-1776269645774-a81c41a5",
+            "status": "completed",
+            "startedAt": "2026-04-15T16:14:06.092Z",
+            "completedAt": "2026-04-15T16:14:06.192Z",
+            "details": {
+              "ipBlocked": "192.168.147.70",
+              "firewallRulesUpdated": true,
+              "endpointsIsolated": 2,
+              "actionsExecuted": [
+                "containment",
+                "traffic_filtering",
+                "evidence_collection"
+              ]
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-15T16:14:06.192Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1776269645774-a81c41a5",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1776269646284-cfdaf29a",
+      {
+        "id": "MSG-1776269646284-cfdaf29a",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_eradication",
+          "correlationId": "INC-1776269645774-a81c41a5",
+          "result": {
+            "action": "eradication",
+            "correlationId": "INC-1776269645774-a81c41a5",
+            "status": "completed",
+            "startedAt": "2026-04-15T16:14:06.184Z",
+            "completedAt": "2026-04-15T16:14:06.284Z",
+            "details": {
+              "malwareRemoved": true,
+              "signaturesUpdated": true,
+              "backdoorsCleared": 1,
+              "patchesApplied": 5
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-15T16:14:06.284Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1776269645774-a81c41a5",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1776269646391-71296f0c",
+      {
+        "id": "MSG-1776269646391-71296f0c",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_recovery",
+          "correlationId": "INC-1776269645774-a81c41a5",
+          "result": {
+            "action": "recovery",
+            "correlationId": "INC-1776269645774-a81c41a5",
+            "status": "completed",
+            "startedAt": "2026-04-15T16:14:06.291Z",
+            "completedAt": "2026-04-15T16:14:06.391Z",
+            "details": {
+              "systemsRestored": true,
+              "servicesRestarted": 2,
+              "dataIntegrityVerified": true,
+              "backupValidated": true,
+              "targetAsset": "server-14"
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-15T16:14:06.391Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1776269645774-a81c41a5",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1776269646654-027022f2",
+      {
+        "id": "MSG-1776269646654-027022f2",
+        "queue": "incidents",
+        "body": {
+          "type": "incident_resolved",
+          "correlationId": "INC-1776269645774-a81c41a5",
+          "workflowId": "a81c41a5-0912-45cc-b5cd-0a484c42f62f",
+          "severity": "high"
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-15T16:14:06.654Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1776269645774-a81c41a5",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1777375672899-e132f3a2",
+      {
+        "id": "MSG-1777375672899-e132f3a2",
+        "queue": "incidents",
+        "body": {
+          "type": "incident_received",
+          "correlationId": "INC-1777375672898-2e833458",
+          "data": {
+            "workflowId": "2e833458-98c8-4621-9287-bccb10d69069",
+            "correlationId": "INC-1777375672898-2e833458",
+            "threatType": "malware",
+            "sourceIP": "192.168.233.90",
+            "targetAsset": "server-12",
+            "severity": "critical",
+            "reportedAt": "2026-04-28T11:27:52.898Z"
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-28T11:27:52.899Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1777375672898-2e833458",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1777375673303-1f5f3cbc",
+      {
+        "id": "MSG-1777375673303-1f5f3cbc",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_containment",
+          "correlationId": "INC-1777375672898-2e833458",
+          "result": {
+            "action": "containment",
+            "correlationId": "INC-1777375672898-2e833458",
+            "status": "completed",
+            "startedAt": "2026-04-28T11:27:53.203Z",
+            "completedAt": "2026-04-28T11:27:53.303Z",
+            "details": {
+              "ipBlocked": "192.168.233.90",
+              "firewallRulesUpdated": true,
+              "endpointsIsolated": 2,
+              "actionsExecuted": [
+                "logging",
+                "baseline_update"
+              ]
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-28T11:27:53.303Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1777375672898-2e833458",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1777375673381-7066cd80",
+      {
+        "id": "MSG-1777375673381-7066cd80",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_eradication",
+          "correlationId": "INC-1777375672898-2e833458",
+          "result": {
+            "action": "eradication",
+            "correlationId": "INC-1777375672898-2e833458",
+            "status": "completed",
+            "startedAt": "2026-04-28T11:27:53.281Z",
+            "completedAt": "2026-04-28T11:27:53.381Z",
+            "details": {
+              "malwareRemoved": true,
+              "signaturesUpdated": true,
+              "backdoorsCleared": 0,
+              "patchesApplied": 1
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-28T11:27:53.381Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1777375672898-2e833458",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1777375673476-b3b089c6",
+      {
+        "id": "MSG-1777375673476-b3b089c6",
+        "queue": "response-actions",
+        "body": {
+          "type": "action_recovery",
+          "correlationId": "INC-1777375672898-2e833458",
+          "result": {
+            "action": "recovery",
+            "correlationId": "INC-1777375672898-2e833458",
+            "status": "completed",
+            "startedAt": "2026-04-28T11:27:53.376Z",
+            "completedAt": "2026-04-28T11:27:53.476Z",
+            "details": {
+              "systemsRestored": true,
+              "servicesRestarted": 1,
+              "dataIntegrityVerified": true,
+              "backupValidated": true,
+              "targetAsset": "server-12"
+            }
+          }
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-28T11:27:53.476Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1777375672898-2e833458",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    [
+      "MSG-1777375673773-8a36ab31",
+      {
+        "id": "MSG-1777375673773-8a36ab31",
+        "queue": "incidents",
+        "body": {
+          "type": "incident_resolved",
+          "correlationId": "INC-1777375672898-2e833458",
+          "workflowId": "2e833458-98c8-4621-9287-bccb10d69069",
+          "severity": "low"
+        },
+        "priority": "normal",
+        "status": "pending",
+        "producedAt": "2026-04-28T11:27:53.773Z",
+        "consumedAt": null,
+        "retryCount": 0,
+        "metadata": {
+          "contentType": "application/json",
+          "correlationId": "INC-1777375672898-2e833458",
+          "headers": {
+            "producer": "cyberguard-server",
+            "version": "1.0"
+          }
+        }
+      }
+    ]
+  ],
+  "queues": [
+    [
+      "incidents",
+      [
+        "MSG-1775924879342-c31bd95e",
+        "MSG-1775924880075-5d47be4b",
+        "MSG-1775931923005-907034c0",
+        "MSG-1775931923883-238a8e75",
+        "MSG-1775932088440-64b038d0",
+        "MSG-1775932089233-ad92743e",
+        "MSG-1775932389903-ea4629eb",
+        "MSG-1775932390842-0a90d25c",
+        "MSG-1776269645775-695b5e0a",
+        "MSG-1776269646654-027022f2",
+        "MSG-1777375672899-e132f3a2",
+        "MSG-1777375673773-8a36ab31"
+      ]
+    ],
+    [
+      "alerts",
+      []
+    ],
+    [
+      "response-actions",
+      [
+        "MSG-1775924879706-9e66e367",
+        "MSG-1775924879777-77a2159f",
+        "MSG-1775924879857-238f0c11",
+        "MSG-1775931923424-6b044985",
+        "MSG-1775931923499-504bd2a0",
+        "MSG-1775931923598-871aa057",
+        "MSG-1775932088698-9f73fae9",
+        "MSG-1775932088849-47877729",
+        "MSG-1775932089009-bde86410",
+        "MSG-1775932390276-655ab029",
+        "MSG-1775932390475-1baf7631",
+        "MSG-1775932390598-67d068b4",
+        "MSG-1776269646192-d29e0f38",
+        "MSG-1776269646284-cfdaf29a",
+        "MSG-1776269646391-71296f0c",
+        "MSG-1777375673303-1f5f3cbc",
+        "MSG-1777375673381-7066cd80",
+        "MSG-1777375673476-b3b089c6"
+      ]
+    ],
+    [
+      "notifications",
+      []
+    ],
+    [
+      "dead-letter",
+      []
+    ]
+  ],
+  "stats": {
+    "totalProduced": 35,
+    "totalConsumed": 5,
+    "totalFailed": 0,
+    "queueStats": {
+      "incidents": {
+        "produced": 12,
+        "consumed": 0,
+        "pending": 12
+      },
+      "alerts": {
+        "produced": 5,
+        "consumed": 5,
+        "pending": 0
+      },
+      "response-actions": {
+        "produced": 18,
+        "consumed": 0,
+        "pending": 18
+      },
+      "notifications": {
+        "produced": 0,
+        "consumed": 0,
+        "pending": 0
+      },
+      "dead-letter": {
+        "produced": 0,
+        "consumed": 0,
+        "pending": 0
+      }
+    }
+  },
+  "savedAt": "2026-04-28T11:28:10.246Z"
+}

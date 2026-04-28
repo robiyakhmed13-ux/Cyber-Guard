@@ -1,0 +1,71 @@
+{
+  "dataset_path": "C:\\Users\\User\\OneDrive\\\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b\\cyber-hug-guardian-main\\server\\phase5\\data\\training_dataset.csv",
+  "model_path": "C:\\Users\\User\\OneDrive\\\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b\\cyber-hug-guardian-main\\server\\phase5\\artifacts\\risk_model.pkl",
+  "samples": 39,
+  "train_samples": 29,
+  "test_samples": 10,
+  "classes": [
+    "critical",
+    "high",
+    "low",
+    "medium"
+  ],
+  "accuracy": 0.9,
+  "classification_report": {
+    "critical": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "high": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 3.0
+    },
+    "low": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "medium": {
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1-score": 0.8571428571428571,
+      "support": 3.0
+    },
+    "accuracy": 0.9,
+    "macro avg": {
+      "precision": 0.6875,
+      "recall": 0.75,
+      "f1-score": 0.7142857142857143,
+      "support": 10.0
+    },
+    "weighted avg": {
+      "precision": 0.825,
+      "recall": 0.9,
+      "f1-score": 0.8571428571428571,
+      "support": 10.0
+    }
+  },
+  "example_probability_vector": {
+    "critical": 0.03125,
+    "high": 0.7375,
+    "low": 0.0,
+    "medium": 0.23125
+  },
+  "feature_fields": [
+    "threat_type",
+    "severity",
+    "source_ip",
+    "target_asset",
+    "ioc_type",
+    "ioc_source",
+    "status",
+    "description_length",
+    "related_iocs",
+    "open_ports"
+  ]
+}

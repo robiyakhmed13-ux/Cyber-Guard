@@ -6,6 +6,7 @@
 
 const AuthService = require('../services/authService');
 const IncidentService = require('../services/incidentService');
+const Phase5Service = require('../services/phase5Service');
 const ThreatIntelService = require('../services/threatIntelService');
 const SystemService = require('../services/systemService');
 const DataTransformer = require('../services/dataTransformer');
@@ -287,4 +288,77 @@ const SystemController = {
   }
 };
 
-module.exports = { AuthController, IncidentController, ThreatIntelController, SystemController };
+const IntelligenceController = {
+  async getHealth(req, res) {
+    try {
+      const result = await Phase5Service.getHealth();
+      res.json(DataTransformer.wrapResponse(result));
+    } catch (error) {
+      const statusCode = error.statusCode || 503;
+      res.status(statusCode).json(DataTransformer.wrapError(error.message || 'Phase V service unavailable', statusCode));
+    }
+  },
+
+  async getModelInfo(req, res) {
+    try {
+      const result = await Phase5Service.getModelInfo();
+      res.json(DataTransformer.wrapResponse(result));
+    } catch (error) {
+      const statusCode = error.statusCode || 503;
+      res.status(statusCode).json(DataTransformer.wrapError(error.message || 'Failed to fetch model info', statusCode));
+    }
+  },
+
+  async predictRisk(req, res) {
+    try {
+      const result = await Phase5Service.predictRisk(req.body);
+      res.json(DataTransformer.wrapResponse(result));
+    } catch (error) {
+      const statusCode = error.statusCode || 503;
+      res.status(statusCode).json(DataTransformer.wrapError(error.message || 'Prediction failed', statusCode));
+    }
+  },
+
+  async getOntologyTriples(req, res) {
+    try {
+      const result = await Phase5Service.getOntologyTriples(req.query);
+      res.json(DataTransformer.wrapResponse(result));
+    } catch (error) {
+      const statusCode = error.statusCode || 503;
+      res.status(statusCode).json(DataTransformer.wrapError(error.message || 'Semantic triple lookup failed', statusCode));
+    }
+  },
+
+  async queryOntology(req, res) {
+    try {
+      const result = await Phase5Service.queryOntology(req.query);
+      res.json(DataTransformer.wrapResponse(result));
+    } catch (error) {
+      const statusCode = error.statusCode || 503;
+      res.status(statusCode).json(DataTransformer.wrapError(error.message || 'Semantic query failed', statusCode));
+    }
+  },
+
+  async enrichIncident(req, res) {
+    try {
+      const incident = IncidentService.getById(parseInt(req.params.id, 10)).result;
+      const result = await Phase5Service.enrichIncident(incident);
+      res.json(DataTransformer.wrapResponse(result));
+    } catch (error) {
+      const statusCode = error.statusCode || 503;
+      res.status(statusCode).json(DataTransformer.wrapError(error.message || 'Incident enrichment failed', statusCode));
+    }
+  },
+
+  async llmRecommendation(req, res) {
+    try {
+      const result = await Phase5Service.llmRecommendation(req.body);
+      res.json(DataTransformer.wrapResponse(result));
+    } catch (error) {
+      const statusCode = error.statusCode || 503;
+      res.status(statusCode).json(DataTransformer.wrapError(error.message || 'LLM recommendation failed', statusCode));
+    }
+  }
+};
+
+module.exports = { AuthController, IncidentController, ThreatIntelController, SystemController, IntelligenceController };

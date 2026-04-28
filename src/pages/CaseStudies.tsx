@@ -48,15 +48,15 @@ const CaseStudies = () => (
           </div>
           <div className="grid md:grid-cols-3 gap-6 text-sm">
             <div>
-              <h3 className="font-mono text-xs text-primary mb-2">{`> Challenge`}</h3>
+              <h3 className="font-mono text-xs text-primary mb-2">{`Challenge`}</h3>
               <p className="text-muted-foreground">{cs.challenge}</p>
             </div>
             <div>
-              <h3 className="font-mono text-xs text-primary mb-2">{`> Solution`}</h3>
+              <h3 className="font-mono text-xs text-primary mb-2">{`Solution`}</h3>
               <p className="text-muted-foreground">{cs.solution}</p>
             </div>
             <div>
-              <h3 className="font-mono text-xs text-primary mb-2">{`> Results`}</h3>
+              <h3 className="font-mono text-xs text-primary mb-2">{`Results`}</h3>
               <ul className="space-y-1">
                 {cs.results.map((r, j) => (
                   <li key={j} className="text-muted-foreground flex items-start gap-2">

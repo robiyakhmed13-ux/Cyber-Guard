@@ -12,6 +12,7 @@
 const EventEmitter = require('events');
 const { JobQueueModel } = require('../models/nedbModels');
 const { SystemEventModel } = require('../models/nedbModels');
+const Phase5Service = require('./phase5Service');
 const logger = require('../utils/logger');
 
 class AsyncProcessor extends EventEmitter {
@@ -183,15 +184,44 @@ class AsyncProcessor extends EventEmitter {
   // ============================================================
 
   async handleThreatAnalysis(payload) {
-    // Simulate async threat analysis
-    await this.delay(200 + Math.random() * 300);
-    return {
-      analyzed: true,
-      threatType: payload.threat_type,
-      riskScore: Math.floor(Math.random() * 100),
-      recommendations: ['Update signatures', 'Monitor endpoints'],
-      processedAt: new Date().toISOString()
-    };
+    try {
+      const analysis = await Phase5Service.enrichIncident({
+        incident_id: payload.incident_id || `ASYNC-${Date.now()}`,
+        threat_type: payload.threat_type,
+        severity: payload.severity || 'medium',
+        source_ip: payload.source_ip,
+        target_asset: payload.target_asset || 'async-asset',
+        status: payload.status || 'open',
+        ioc_type: payload.ioc_type || Phase5Service.defaultIocType(payload.threat_type),
+        ioc_source: payload.ioc_source || 'internal',
+        description: payload.description || '',
+        related_iocs: payload.related_iocs || 1,
+        open_ports: payload.open_ports || 0
+      });
+
+      return {
+        analyzed: true,
+        threatType: payload.threat_type,
+        predictedRisk: analysis.predicted_risk,
+        confidence: analysis.confidence,
+        recommendations: analysis.semantic_context.recommendations,
+        mitigations: analysis.semantic_context.mitigations,
+        processedAt: new Date().toISOString()
+      };
+    } catch (error) {
+      logger.warn('Phase V analysis unavailable, using fallback async analysis', { error: error.message });
+      await this.delay(200 + Math.random() * 300);
+      return {
+        analyzed: true,
+        threatType: payload.threat_type,
+        predictedRisk: payload.severity || 'medium',
+        confidence: 0.5,
+        recommendations: ['Review the incident manually', 'Verify IOC coverage'],
+        mitigations: ['Collect evidence and isolate affected assets if needed'],
+        processedAt: new Date().toISOString(),
+        fallback: true
+      };
+    }
   }
 
   async handleScanProcessing(payload) {

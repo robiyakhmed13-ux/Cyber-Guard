@@ -1,0 +1,153 @@
+@prefix ex: <http://cyberguard.local/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+ex:Incident a owl:Class .
+ex:ThreatIndicator a owl:Class .
+ex:ThreatActor a owl:Class .
+ex:Asset a owl:Class .
+ex:Mitigation a owl:Class .
+ex:AttackTechnique a owl:Class .
+ex:Recommendation a owl:Class .
+ex:Prediction a owl:Class .
+
+ex:targets a owl:ObjectProperty .
+ex:indicates a owl:ObjectProperty .
+ex:relatedTo a owl:ObjectProperty .
+ex:mitigatedBy a owl:ObjectProperty .
+ex:usesTechnique a owl:ObjectProperty .
+ex:suggestsResponse a owl:ObjectProperty .
+ex:hasSeverity a owl:ObjectProperty .
+ex:hasRiskLevel a owl:ObjectProperty .
+ex:observedFrom a owl:ObjectProperty .
+ex:recommendedFor a owl:ObjectProperty .
+
+ex:Critical a ex:Recommendation .
+ex:High a ex:Recommendation .
+ex:Medium a ex:Recommendation .
+ex:Low a ex:Recommendation .
+
+ex:FinanceDatabase a ex:Asset ;
+  rdfs:label "Finance Database" .
+
+ex:PublicWeb a ex:Asset ;
+  rdfs:label "Public Web Service" .
+
+ex:IdentityServer a ex:Asset ;
+  rdfs:label "Identity Server" .
+
+ex:EndpointLaptop a ex:Asset ;
+  rdfs:label "Endpoint Laptop" .
+
+ex:AdminVPN a ex:Asset ;
+  rdfs:label "Administrative VPN" .
+
+ex:ObjectStorage a ex:Asset ;
+  rdfs:label "Object Storage" .
+
+ex:T1486 a ex:AttackTechnique ;
+  rdfs:label "Data Encrypted for Impact" .
+
+ex:T1566 a ex:AttackTechnique ;
+  rdfs:label "Phishing" .
+
+ex:T1190 a ex:AttackTechnique ;
+  rdfs:label "Exploit Public-Facing Application" .
+
+ex:T1110 a ex:AttackTechnique ;
+  rdfs:label "Brute Force" .
+
+ex:T1071 a ex:AttackTechnique ;
+  rdfs:label "Application Layer Protocol" .
+
+ex:T1041 a ex:AttackTechnique ;
+  rdfs:label "Exfiltration Over C2 Channel" .
+
+ex:IsolateEndpoint a ex:Mitigation ;
+  rdfs:label "Isolate affected endpoint from the network" .
+
+ex:ResetCredentials a ex:Mitigation ;
+  rdfs:label "Reset privileged credentials and force MFA validation" .
+
+ex:PatchInternetFacingApp a ex:Mitigation ;
+  rdfs:label "Patch and harden internet-facing application components" .
+
+ex:BlockMaliciousIndicators a ex:Mitigation ;
+  rdfs:label "Block malicious indicators across gateway and firewall controls" .
+
+ex:ThrottleIngressTraffic a ex:Mitigation ;
+  rdfs:label "Apply upstream rate limiting and traffic scrubbing" .
+
+ex:ProtectSensitiveBuckets a ex:Mitigation ;
+  rdfs:label "Lock down bucket policies and monitor outbound transfers" .
+
+ex:EndpointContainmentPlan a ex:Recommendation ;
+  rdfs:label "Contain endpoint, preserve forensic artifacts, and rotate credentials" ;
+  ex:recommendedFor ex:Critical .
+
+ex:CredentialDefensePlan a ex:Recommendation ;
+  rdfs:label "Limit login attempts, reset credentials, and review MFA telemetry" ;
+  ex:recommendedFor ex:High .
+
+ex:WebAppHardeningPlan a ex:Recommendation ;
+  rdfs:label "Patch vulnerable web components and validate inputs" ;
+  ex:recommendedFor ex:High .
+
+ex:TrafficMitigationPlan a ex:Recommendation ;
+  rdfs:label "Reroute and scrub traffic while monitoring edge saturation" ;
+  ex:recommendedFor ex:Critical .
+
+ex:RansomwareIndicator a ex:ThreatIndicator ;
+  rdfs:label "Ransomware IOC" ;
+  ex:usesTechnique ex:T1486 ;
+  ex:mitigatedBy ex:IsolateEndpoint .
+
+ex:PhishingIndicator a ex:ThreatIndicator ;
+  rdfs:label "Phishing IOC" ;
+  ex:usesTechnique ex:T1566 ;
+  ex:mitigatedBy ex:BlockMaliciousIndicators .
+
+ex:SqlInjectionIndicator a ex:ThreatIndicator ;
+  rdfs:label "SQL Injection IOC" ;
+  ex:usesTechnique ex:T1190 ;
+  ex:mitigatedBy ex:PatchInternetFacingApp .
+
+ex:BruteForceIndicator a ex:ThreatIndicator ;
+  rdfs:label "Brute Force IOC" ;
+  ex:usesTechnique ex:T1110 ;
+  ex:mitigatedBy ex:ResetCredentials .
+
+ex:DdosIndicator a ex:ThreatIndicator ;
+  rdfs:label "DDoS IOC" ;
+  ex:usesTechnique ex:T1071 ;
+  ex:mitigatedBy ex:ThrottleIngressTraffic .
+
+ex:ExfiltrationIndicator a ex:ThreatIndicator ;
+  rdfs:label "Data Exfiltration IOC" ;
+  ex:usesTechnique ex:T1041 ;
+  ex:mitigatedBy ex:ProtectSensitiveBuckets .
+
+ex:RansomwareIncidentTemplate a ex:Incident ;
+  ex:indicates ex:RansomwareIndicator ;
+  ex:targets ex:EndpointLaptop ;
+  ex:suggestsResponse ex:EndpointContainmentPlan ;
+  ex:hasRiskLevel ex:Critical .
+
+ex:PhishingIncidentTemplate a ex:Incident ;
+  ex:indicates ex:PhishingIndicator ;
+  ex:targets ex:FinanceDatabase ;
+  ex:suggestsResponse ex:CredentialDefensePlan ;
+  ex:hasRiskLevel ex:High .
+
+ex:SqlInjectionIncidentTemplate a ex:Incident ;
+  ex:indicates ex:SqlInjectionIndicator ;
+  ex:targets ex:PublicWeb ;
+  ex:suggestsResponse ex:WebAppHardeningPlan ;
+  ex:hasRiskLevel ex:High .
+
+ex:DdosIncidentTemplate a ex:Incident ;
+  ex:indicates ex:DdosIndicator ;
+  ex:targets ex:PublicWeb ;
+  ex:suggestsResponse ex:TrafficMitigationPlan ;
+  ex:hasRiskLevel ex:Critical .

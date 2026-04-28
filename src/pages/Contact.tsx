@@ -19,8 +19,8 @@ const Contact = () => {
               <div className="space-y-4">
                 {[
                   { icon: Mail, label: "Email", value: "security@cyberguard.io" },
-                  { icon: Phone, label: "Phone", value: "+1 (555) CYBER-01" },
-                  { icon: MapPin, label: "Location", value: "Astana, Kazakhstan" },
+                  { icon: Phone, label: "Phone", value: "+998 (93) CYBER-01" },
+                  { icon: MapPin, label: "Location", value: "Uzbekistan, Tashkent" },
                   { icon: Clock, label: "Hours", value: "24/7 SOC Operations" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-3">
@@ -35,7 +35,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <h2 className="font-mono text-sm text-primary mb-4">{`> Emergency_Response`}</h2>
+              <h2 className="font-mono text-sm text-primary mb-4">{`Emergency Response`}</h2>
               <div className="bg-card border border-destructive/30 rounded p-4 text-sm text-muted-foreground">
                 For active security incidents requiring immediate assistance, contact our 24/7 Security Operations Center at{" "}
                 <span className="text-destructive font-mono">emergency@cyberguard.io</span> or call our emergency hotline.
@@ -44,7 +44,7 @@ const Contact = () => {
           </div>
 
           <div>
-            <h2 className="font-mono text-sm text-primary mb-4">{`> Send_Message`}</h2>
+            <h2 className="font-mono text-sm text-primary mb-4">{`Send Message`}</h2>
             {submitted ? (
               <div className="bg-card border border-primary/30 rounded p-8 text-center">
                 <div className="text-primary font-mono text-lg mb-2">Message Sent ✓</div>
